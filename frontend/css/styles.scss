@@ -1,5 +1,9 @@
 @import "images";
 
+table tbody tr:hover {
+  background-color: #dfe1e3;
+}
+
 .navbar-inverse .navbar-brand,
 .navbar-inverse .navbar-collapse,
 .navbar.navbar-inverse .navbar-form,
