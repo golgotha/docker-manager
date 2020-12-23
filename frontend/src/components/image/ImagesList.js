@@ -43,9 +43,10 @@ const ImagesList = ({filter}) => {
         setError({hasError: false});
     });
 
-    const filterPredicate = (id, filter) => {
+    const filterPredicate = (tags, filter) => {
         if (filter) {
-            return id.indexOf(filter) !== -1;
+            return tags.some(tag => tag.indexOf(filter) !== -1)
+            // return id.indexOf(filter) !== -1;
         }
         return true;
     }
@@ -66,16 +67,21 @@ const ImagesList = ({filter}) => {
 
                 <tbody>
                 {
-                    images.filter(image => filterPredicate(image.RepoTags[0], filter)).map(image => {
-                        const repoTags = image.RepoTags[0].split(":");
-                        return (<Image id={image.Id}
-                                       key={image.Id}
-                                       repository={repoTags[0]}
-                                       tag={repoTags[1]}
-                                       created={image.Created}
-                                       size={image.Size}
-                                       onRemove={onRemove}
-                        />);
+                    images.filter(image => filterPredicate(image.RepoTags, filter)).map(image => {
+                        return image.RepoTags.map(repoTags => {
+                            const lastIndex = repoTags.lastIndexOf(":");
+                            const repository = repoTags.substring(0, lastIndex)
+                            const tag = repoTags.substring(lastIndex + 1);
+                            return (<Image id={image.Id}
+                                           key={image.Id + repository}
+                                           repository={repository}
+                                           tag={tag}
+                                           created={image.Created}
+                                           size={image.Size}
+                                           onRemove={onRemove}
+                            />);
+                        })
+
                     })
                 }
                 </tbody>
