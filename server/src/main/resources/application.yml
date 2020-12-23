@@ -1,0 +1,9 @@
+server:
+    port: 9000
+    http2:
+        enabled: true
+    servlet:
+        context-path: /v1/
+
+management:
+    server.port: 9001

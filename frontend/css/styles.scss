@@ -1,0 +1,16 @@
+@import "images";
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-collapse,
+.navbar.navbar-inverse .navbar-form,
+.navbar-inverse .nav > li > a {
+  border: none !important;
+}
+
+.navbar-inverse .collapse {
+  display: flex !important;
+}
+
+.navbar-inverse .nav > li > a {
+
+}
