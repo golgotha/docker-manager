@@ -24,8 +24,11 @@ public class RemoteDockerClientService implements DockerClientService {
     }
 
     @Override
-    public void removeImage(String imageId) {
-
+    public void removeImage(String imageId, Boolean force) {
+        client.removeImageCmd(imageId)
+                .withImageId(imageId)
+                .withForce(force)
+                .exec();
     }
 }
  

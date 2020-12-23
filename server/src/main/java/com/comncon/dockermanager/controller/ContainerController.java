@@ -2,7 +2,6 @@ package com.comncon.dockermanager.controller;
 
 import com.comncon.dockermanager.services.DockerClientService;
 import com.github.dockerjava.api.model.Container;
-import com.github.dockerjava.api.model.Image;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;

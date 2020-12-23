@@ -14,7 +14,7 @@ const MainView = ({children}) => {
             <div className="row">
                 <div className="col">
                     <nav className="navbar navbar-inverse navbar-embossed navbar-expand-lg" role="navigation">
-                        <a className="navbar-brand" href="#">Docker Manager</a>
+                        <Link className="navbar-brand" to="/">Docker Manager</Link>
 
                         <div className="collapse navbar-collapse" id="navbar-collapse-01">
                             <ul className="nav navbar-nav mr-auto">

@@ -12,5 +12,5 @@ public interface DockerClientService {
 
     List<Container> getContainers();
 
-    void removeImage(String imageId);
+    void removeImage(String imageId, Boolean force);
 }

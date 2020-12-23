@@ -12,7 +12,13 @@ export default class DockerImageService {
     });
   }
 
-  // static readResource(id) {
-  //   return `/numizmatclub/api/${apiEndpoints.READ_UKRAINIAN_COINS_RESOURCE}?id=${id}`;
-  // }
+  static removeImage(id, force = false) {
+    return apiRequest({
+      httpMethod: HttpMethod.POST,
+      resourceUrl: apiEndpoints.DOCKER_REMOVE_IMAGE,
+      payload: {id, force}
+    }).then(result => {
+      return JSON.parse(result.text);
+    });
+  }
 }

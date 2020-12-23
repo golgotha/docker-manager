@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AppConfiguration {
 
-    @Bean
+    @Bean(destroyMethod = "close")
     public DockerClient dockerClient() {
         return RemoteDockerClientFactory.create();
     }
